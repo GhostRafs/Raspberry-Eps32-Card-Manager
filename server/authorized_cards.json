@@ -1,0 +1,8 @@
+{
+    "cards": [
+        {"id": "0x1a2b3c4d", "name": "Admin", "authorized": true},
+        {"id": "0xabcdef12", "name": "Guest", "authorized": false},
+        {"id": "0x55667788", "name": "Teste 1", "authorized": true},
+        {"id": "0x99aabbcc", "name": "Teste 2", "authorized": true}
+    ]
+}
