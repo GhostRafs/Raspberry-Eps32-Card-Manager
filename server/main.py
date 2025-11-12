@@ -51,6 +51,8 @@ class RFIDServer:
             print(f"Erro ao registrar acesso: {e}")
 
     def is_card_authorized(self, card_id):
+        # Reload authorized cards on each check so dashboard updates apply immediately
+        self.authorized_cards = self.load_authorized_cards()
         for card in self.authorized_cards.get("cards", []):
             if card.get("id") == card_id:
                 return card.get("authorized", False)
