@@ -1,8 +1,11 @@
 import json
 import argparse
+from pathlib import Path
 
-AUTH_CARDS_FILE = 'authorized_cards.json'
-LOG_FILE = 'access_log.json'
+# Use absolute paths relative to this file's directory to avoid CWD issues
+BASE_DIR = Path(__file__).parent.resolve()
+AUTH_CARDS_FILE = str((BASE_DIR / 'authorized_cards.json').resolve())
+LOG_FILE = str((BASE_DIR / 'access_log.json').resolve())
 
 def load_cards():
     try:

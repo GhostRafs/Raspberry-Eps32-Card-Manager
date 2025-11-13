@@ -2,11 +2,13 @@ import json
 import socket
 import threading
 from datetime import datetime
+from pathlib import Path
 
 HOST = '0.0.0.0'  # Escutar em todas as interfaces de rede
 PORT = 5000       # Porta para escutar
-LOG_FILE = 'access_log.json'
-AUTH_CARDS_FILE = 'authorized_cards.json'
+BASE_DIR = Path(__file__).parent.resolve()
+LOG_FILE = str((BASE_DIR / 'access_log.json').resolve())
+AUTH_CARDS_FILE = str((BASE_DIR / 'authorized_cards.json').resolve())
 
 class RFIDServer:
     def __init__(self):

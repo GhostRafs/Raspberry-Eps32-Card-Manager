@@ -11,9 +11,8 @@ try:
 except Exception:  # pragma: no cover
     st_autorefresh = None
 
-# Ensure relative file paths in card_manager work regardless of run location
-BASE_DIR = Path(__file__).parent
-os.chdir(BASE_DIR)
+# Base path of the server directory (use absolute paths; do not change CWD to avoid Streamlit reload issues)
+BASE_DIR = Path(__file__).parent.resolve()
 
 import card_manager as cm  # noqa: E402
 
